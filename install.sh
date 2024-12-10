@@ -5,7 +5,7 @@ wget https://raw.githubusercontent.com/88n77/Logo-88n77/main/logo.sh
 chmod +x logo.sh
 ./logo.sh
 
-setup_url="https://raw.githubusercontent.com/88n77NODES/NEXUS/blob/main/setup.sh"
+setup_url="https://raw.githubusercontent.com/88n77NODES/NEXUS/main/setup.sh"
 update_url=""
 delete_url=""
 menu_options=("Встановити" "Оновити" "Видалити" "Вийти")
