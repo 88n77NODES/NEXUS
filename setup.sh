@@ -19,9 +19,15 @@ rustup update
 
 echo -e "${YELLOW}Встановлюємо screen для створення сесій...${RESET}"
 sudo apt install -y screen
-screen -dmS nexus 
 
-echo -e "${YELLOW}Завантажуємо та запускаємо скрипт Nexus...${RESET}"
-curl https://cli.nexus.xyz/ | bash
 
-echo -e "${GREEN}Скрипт завершено! Нода Nexus встановлена та запущена у сесії screen.${RESET}"
+echo -e "${YELLOW}Запускаємо встановлення Nexus у фоновій сесії screen...${RESET}"
+screen -dmS nexus bash -c "
+    echo -e '${YELLOW}Завантажуємо та запускаємо скрипт Nexus...${RESET}';
+    curl -s https://cli.nexus.xyz/ | bash;
+    echo -e '${GREEN}Скрипт Nexus завершено.${RESET}';
+    exec bash
+"
+
+echo -e "${GREEN}Скрипт завершено! Нода Nexus встановлена та запущена у фоновій сесії screen.${RESET}"
+echo -e "${YELLOW}Щоб підключитися до сесії, використовуйте команду:${RESET} screen -r nexus"
