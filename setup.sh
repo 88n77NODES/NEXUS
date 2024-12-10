@@ -17,6 +17,13 @@ echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 rustup update
 
+echo -e "${YELLOW}Повторно встановлюємо Rust...${RESET}"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup self update
+rustup install stable
+source $HOME/.cargo/env
+rustc --version
+
 echo -e "${YELLOW}Встановлюємо screen для створення сесій...${RESET}"
 sudo apt install -y screen
 
@@ -29,5 +36,5 @@ screen -dmS nexus bash -c "
     exec bash
 "
 
-echo -e "${GREEN}Скрипт завершено! Нода Nexus встановлена та запущена у фоновій сесії screen.${RESET}"
+echo -e "${GREEN}Скрипт завершено! Нода Nexus запущена у фоновій сесії screen.${RESET}"
 echo -e "${YELLOW}Щоб підключитися до сесії, використовуйте команду:${RESET} screen -r nexus"
