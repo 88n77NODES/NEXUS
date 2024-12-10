@@ -1,13 +1,20 @@
+#!/bin/bash
+
+# Кольори для виділення
 green='\033[0;32m'
 nc='\033[0m'
 
-wget https://raw.githubusercontent.com/88n77/Logo-88n77/main/logo.sh
+# Завантаження та запуск логотипу
+wget -q https://raw.githubusercontent.com/88n77/Logo-88n77/main/logo.sh
 chmod +x logo.sh
 ./logo.sh
 
+# URL-адреси для дій
 setup_url="https://raw.githubusercontent.com/88n77NODES/NEXUS/main/setup.sh"
-update_url=""
-delete_url=""
+update_url="https://raw.githubusercontent.com/88n77NODES/NEXUS/main/update.sh"
+delete_url="https://raw.githubusercontent.com/88n77NODES/NEXUS/main/delete.sh"
+
+# Меню опцій
 menu_options=("Встановити" "Оновити" "Видалити" "Вийти")
 PS3='Оберіть дію: '
 
@@ -35,4 +42,3 @@ do
             ;;
     esac
 done
-
