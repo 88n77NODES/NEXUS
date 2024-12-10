@@ -16,9 +16,6 @@ source $HOME/.cargo/env
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 rustup update
-
-echo -e "${YELLOW}Повторно встановлюємо Rust...${RESET}"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup self update
 rustup install stable
 source $HOME/.cargo/env
