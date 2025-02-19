@@ -37,4 +37,4 @@ echo -e "${YELLOW}Встановлюємо screen для створення се
 sudo apt install -y screen
 
 echo -e "${GREEN}Скрипт завершено! Запустіть Nexus у фоновій сесії screen.${RESET}"
-echo -e "${YELLOW}Щоб підключитися до сесії, використовуйте команду:${RESET} screen -r nexus"
+echo -e "${YELLOW}Щоб підключитися до сесії, використовуйте команду:${RESET} screen -S nexus"
